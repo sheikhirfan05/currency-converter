@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter with JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/phone.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <div class="inputs">
+            <input type="number" placeholder="Pakistan Ruppee" id="pkr">
+            <input type="number" placeholder="Unites States Dollar" id="dollar" disabled>
+        </div>
+        <button id="btn" onclick="resetBtn()">Reset</button>
+    </div>
+    <script>
+        let pkr = document.getElementById('pkr');
+        let dollar = document.getElementById('dollar');
+
+        pkr.addEventListener('input', function(){
+            let a = this.value;
+            let b = a * 286.08;
+            dollar.value = b;
+        });
+        function resetBtn(){
+            pkr.value = pkr;
+            dollar.value = dollar;
+        };
+    </script>
+</body>
+</html>
